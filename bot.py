@@ -24,35 +24,6 @@ from telegram.constants import ParseMode
 ACCOUNT_LINK_INPUT = 1
 AFTER_QR_SENT = 2
 
-
-WHAT_APP = {
-    "Nekoray": {
-        "name": "Nekoray",
-        'desc': "Nekoray",
-        "image_path": os.path.join(real_dir,"images/nekoray.jpg")
-    },
-
-    "V2rayNG": {
-        "name": "V2rayNG",
-        "desc": "V2rayNG",
-        "image_path": os.path.join(real_dir,"images/v2rayng.jpg")
-    },
-
-    "OneClick": {
-        "name": "OneClick",
-        "desc": "OneClick",
-        "image_path": os.path.join(real_dir,"images/oneclick.jpg")
-    },
-
-    "NamsternetV": {
-        "name": "NapsterNetV",
-        "desc": "NapsterNetV",
-        "image_path": os.path.join(real_dir,"images/napsternetv.jpg")
-    },
-
-}
-
-
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_name = update.message.from_user.first_name
     await update.message.reply_text(f"سلام {user_name} عزیز خوش اومدی\n" + msg_yaml['start_msg'])
@@ -150,7 +121,6 @@ async def post_init(application: Application):
     await application.bot.set_my_commands([
         BotCommand("/start", "استارت"),
         BotCommand("/qrcode", "ساخت QRCode"),
-        BotCommand("/what", "چه نرم افزاری استفاده میکنید؟"),
     ])
 
 
